@@ -58,8 +58,9 @@ export async function POST(req: Request) {
         externalUserId: payload.data.id,
         username: payload.data.username,
         imageUrl: payload.data.image_url,
-      },
-    });
+        },
+        });
+      console.log(db.user)
   }
 
   if (eventType === "user.updated") {
@@ -81,6 +82,7 @@ export async function POST(req: Request) {
       },
     });
   }
+
 
   return new Response("", { status: 200 });
 }
